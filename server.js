@@ -16,11 +16,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/send", async (req, res) => {
-  await Telegram.send("394090585", " hello man");
   res.send({ message: "message sent successfully" });
 });
 
-app.post("/telegram-webhook", setWebHook);
+app.post("/telegram-webhook/" + token, setWebHook);
 
 app.listen(port, () => console.log(`server running on port ${port}`));
 
