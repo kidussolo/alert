@@ -1,12 +1,15 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const { Telegram } = require("./notifications");
+const { Email } = require("./notifications");
 const { token } = require("./notifications/config");
 const { setWebHook } = require("./controllers");
+const email = require("./notifications/email");
 
 port = process.env.PORT || 8081;
-// token = process.env.BOT_TOKEN;
+const contenttest = {
+  html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
+};
 
 const app = express();
 app.use(bodyParser.json());
@@ -16,6 +19,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/send", async (req, res) => {
+  const info = await Email.send("tayuhermon@gmail.com", contenttest, "test");
+  console.log(info);
   res.send({ message: "message sent successfully" });
 });
 
