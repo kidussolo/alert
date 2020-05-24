@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
   // -> change to qa1
   bot = new TelegramBot(token);
   console.log("error");
-  bot.setWebHook("https://notifier-telegram.herokuapp.com/");
+  bot.setWebHook("https://notifier-telegram.herokuapp.com/telegram-webhook");
 } else {
   bot = new TelegramBot(token, { polling: true });
 }
