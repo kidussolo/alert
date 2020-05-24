@@ -5,10 +5,10 @@ const { token } = require("../config");
 
 let bot;
 
-if (process.env.NODE_ENV === "qa") {
+if (process.env.NODE_ENV === "production") {
   // -> change to qa1
   bot = new TelegramBot(token);
-  bot.setWebHook("https://qa1.newsbrain.io/" + "telgram-webhook/" + token);
+  bot.setWebHook("/" + "telgram-webhook/" + token);
 } else {
   bot = new TelegramBot(token, { polling: true });
 }
