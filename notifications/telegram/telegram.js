@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === "qa") {
   bot = new TelegramBot(token);
   bot.setWebHook("https://qa1.newsbrain.io/" + "telgram-webhook/" + token);
 } else {
-  console.log(`the bot token is ${token}`);
   bot = new TelegramBot(token, { polling: true });
 }
 
@@ -30,7 +29,7 @@ bot.onText(/\/start (.+)/, async (msg, match) => {
     //   },
     // ]);
 
-    if (user.data.length !== 0) {
+    if (true) {
       //   await Update("User", user.data[0].id, {
       //     telegramChatId: chatId,
       //   });

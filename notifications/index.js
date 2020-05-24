@@ -1,4 +1,4 @@
-const { telegram } = require("./telegram");
+const Telegram = require("./telegram");
 module.exports = {
-  telegram,
+  Telegram,
 };

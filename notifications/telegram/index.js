@@ -1,7 +1,6 @@
-const { send, webHookHandler } = require('./telegram')
+const { send, webHookHandler } = require("./telegram");
 
-cosnt { send, webHookHandler } = require('./telegram')
 module.exports = {
-    send,
-    webHookHandler,
-}
+  send,
+  webHookHandler,
+};
