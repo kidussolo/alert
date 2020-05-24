@@ -20,8 +20,8 @@ app.get("/send", async (req, res) => {
   res.send({ message: "message sent successfully" });
 });
 
-app.get("/" + "web-hook/", setWebHook);
+app.get("/" + "telgram-webhook", setWebHook);
 
-app.listen(80, () => console.log(`server running on port ${port}`));
+app.listen(port, () => console.log(`server running on port ${port}`));
 
 module.exports = app;
