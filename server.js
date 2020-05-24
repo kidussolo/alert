@@ -20,10 +20,7 @@ app.get("/send", async (req, res) => {
   res.send({ message: "message sent successfully" });
 });
 
-app.post(
-  "https://notifier-telegram.herokuapp.com/telegram-webhook",
-  setWebHook
-);
+app.post("/telegram-webhook", setWebHook);
 
 app.listen(port, () => console.log(`server running on port ${port}`));
 
