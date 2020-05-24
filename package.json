@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"node server.js\" \"node notifications/telegram/telegram.js\" ",
+    "start": "node server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kidus solomon",

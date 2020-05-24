@@ -8,7 +8,8 @@ let bot;
 if (process.env.NODE_ENV === "production") {
   // -> change to qa1
   bot = new TelegramBot(token);
-  bot.setWebHook("/" + "telgram-webhook");
+  console.log("error");
+  bot.setWebHook("https://notifier-telegram.herokuapp.com/");
 } else {
   bot = new TelegramBot(token, { polling: true });
 }
@@ -74,6 +75,7 @@ bot.on("polling_error", (error) => {
 });
 
 bot.on("webhook_error", (error) => {
+  console.log("errrrrrrrrrrrr");
   console.log(error.response.body);
 });
 
