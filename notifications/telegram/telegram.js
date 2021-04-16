@@ -1,12 +1,10 @@
 require("dotenv").config();
 const TelegramBot = require("node-telegram-bot-api");
-// const { Get, Update } = require("../../graphql/controllers/api");
 const { token } = require("../config");
 
 let bot;
 
 if (process.env.NODE_ENV === "production") {
-  // -> change to qa1
   bot = new TelegramBot(token);
   bot.setWebHook(
     "https://notifier-telegram.herokuapp.com/" + "telegram-webhook/" + token
@@ -21,20 +19,9 @@ const webHookHandler = (body) => {
 
 bot.onText(/\/start (.+)/, async (msg, match) => {
   try {
-    const userToken = match[1];
     const chatId = msg.chat.id;
-    // const user = await Get("User", 0, 1, {}, [
-    //   {
-    //     field: "telegramToken",
-    //     search: false,
-    //     value: userToken,
-    //   },
-    // ]);
 
     if (true) {
-      //   await Update("User", user.data[0].id, {
-      //     telegramChatId: chatId,
-      //   });
       await bot.sendMessage(
         chatId,
         `Welcome ${msg.chat.first_name}  ${msg.chat.last_name} \nYour have Successfully enable Newsbrain telegram notification.` +
