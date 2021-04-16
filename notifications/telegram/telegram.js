@@ -7,7 +7,7 @@ let bot;
 if (process.env.NODE_ENV === "production") {
   bot = new TelegramBot(token);
   bot.setWebHook(
-    "https://notifier-telegram.herokuapp.com/" + "telegram-webhook/" + token
+    process.env.BASE_URL + "telegram-webhook/" + token
   );
 } else {
   bot = new TelegramBot(token, { polling: true });
