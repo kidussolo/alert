@@ -1,2 +1,2 @@
 # alert
-notification using telegram bot
+Telegram and Email notification using telegram bot
